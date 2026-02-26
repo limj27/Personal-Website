@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name — Software Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Tokens ───────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #fafaf8;
+      --bg2: #f3f3ef;
+      --border: #e4e4de;
+      --ink: #1a1a18;
+      --ink-2: #6b6b63;
+      --ink-3: #a8a89e;
+      --accent: #2563eb;
+      --accent-light: #eff4ff;
+      --font: 'DM Sans', sans-serif;
+      --mono: 'DM Mono', monospace;
+      --max: 760px;
+      --r: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── Nav ──────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,250,248,0.9);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: calc(var(--max) + 4rem);
+      margin: 0 auto;
+      padding: 0 2rem;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
+
+    .nav-logo span { color: var(--accent); }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      color: var(--ink-2);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ─── Layout helper ────────────────────────────────── */
+    .container {
+      max-width: calc(var(--max) + 4rem);
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: 5rem 0; }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    h2 {
+      font-size: 1.75rem;
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      color: var(--ink);
+      margin-bottom: 2rem;
+      line-height: 1.2;
+    }
+
+    /* ─── Hero ─────────────────────────────────────────── */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-inner {
+      padding: 8rem 0 5rem;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--mono);
+      font-size: 0.8rem;
+      color: var(--ink-2);
+      margin-bottom: 1.25rem;
+      opacity: 0;
+      animation: up 0.5s 0.1s ease forwards;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-weight: 300;
+      letter-spacing: -0.04em;
+      line-height: 1.1;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      opacity: 0;
+      animation: up 0.5s 0.2s ease forwards;
+    }
+
+    h1 strong { font-weight: 500; }
+
+    .hero-bio {
+      font-size: 1.05rem;
+      color: var(--ink-2);
+      max-width: 480px;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      opacity: 0;
+      animation: up 0.5s 0.32s ease forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      opacity: 0;
+      animation: up 0.5s 0.44s ease forwards;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.6rem 1.25rem;
+      font-family: var(--font);
+      font-size: 0.875rem;
+      font-weight: 500;
+      border-radius: var(--r);
+      text-decoration: none;
+      transition: all 0.15s;
+      cursor: pointer;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary { background: var(--ink); color: #fff; }
+    .btn-primary:hover { background: #333; }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+
+    .btn-outline:hover { border-color: var(--ink-2); background: var(--bg2); }
+
+    /* ─── About ────────────────────────────────────────── */
+    #about {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-body {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: var(--ink-2);
+      font-weight: 300;
+      font-size: 0.9625rem;
+      margin-bottom: 1rem;
+    }
+
+    .about-text p:last-child { margin-bottom: 0; }
+    .about-text strong { color: var(--ink); font-weight: 500; }
+
+    .about-meta { display: flex; flex-direction: column; }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+
+    .meta-row:first-child { border-top: 1px solid var(--border); }
+
+    .meta-key {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .meta-val { color: var(--ink); font-weight: 400; }
+
+    /* ─── Projects ─────────────────────────────────────── */
+    #projects { border-bottom: 1px solid var(--border); }
+
+    .project-list { display: flex; flex-direction: column; }
+
+    .project-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--border);
+      align-items: start;
+    }
+
+    .project-item:first-child { border-top: 1px solid var(--border); }
+
+    .project-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .project-item h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--ink);
+      letter-spacing: -0.01em;
+    }
+
+    .project-tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      letter-spacing: 0.04em;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--ink-2);
+      font-weight: 300;
+      max-width: 440px;
+    }
+
+    .project-stack {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-3);
+      margin-top: 0.6rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+    }
+
+    .project-links a {
+      font-size: 0.8rem;
+      color: var(--ink-2);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+
+    .project-links a:hover { color: var(--ink); }
+
+    /* ─── Skills ───────────────────────────────────────── */
+    #skills {
+      background: var(--bg2);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2.5rem;
+    }
+
+    .skill-group h4 {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-3);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 1rem;
+    }
+
+    .skill-group ul { list-style: none; }
+
+    .skill-group li {
+      font-size: 0.875rem;
+      color: var(--ink-2);
+      font-weight: 300;
+      padding: 0.3rem 0;
+    }
+
+    /* ─── Contact ──────────────────────────────────────── */
+    #contact { border-bottom: 1px solid var(--border); }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-left p {
+      color: var(--ink-2);
+      font-weight: 300;
+      font-size: 0.9625rem;
+      margin-bottom: 1.75rem;
+      line-height: 1.75;
+    }
+
+    .contact-right { display: flex; flex-direction: column; }
+
+    .contact-link-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+      color: var(--ink);
+      transition: all 0.15s;
+    }
+
+    .contact-link-row:first-child { border-top: 1px solid var(--border); }
+    .contact-link-row:hover { padding-left: 0.25rem; color: var(--accent); }
+    .contact-link-row:hover .link-arrow { transform: translateX(3px); }
+
+    .link-name { font-size: 0.9rem; font-weight: 500; }
+    .link-handle { font-family: var(--mono); font-size: 0.75rem; color: var(--ink-3); }
+    .link-arrow { font-size: 1rem; color: var(--ink-3); transition: transform 0.15s; }
+
+    /* ─── Footer ───────────────────────────────────────── */
+    footer { padding: 1.5rem 0; }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: var(--ink-3);
+      font-family: var(--mono);
+    }
+
+    /* ─── Reveal ───────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .reveal.in { opacity: 1; transform: none; }
+
+    @keyframes up {
+      from { opacity: 0; transform: translateY(14px); }
+      to   { opacity: 1; transform: none; }
+    }
+
+    /* ─── Responsive ───────────────────────────────────── */
+    @media (max-width: 640px) {
+      section { padding: 3.5rem 0; }
+      .hero-inner { padding: 7rem 0 3.5rem; }
+      h1 { font-size: 2.25rem; }
+      .about-body,
+      .contact-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .skills-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .project-item { grid-template-columns: 1fr; gap: 0.75rem; }
+      .footer-inner { flex-direction: column; gap: 0.4rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">your<span>.</span>name</a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="container">
+      <div class="hero-inner">
+        <p class="hero-eyebrow">Based in Your City &nbsp;·&nbsp; Open to opportunities</p>
+        <h1>Hi, I'm <strong>Your Name</strong>.<br/>I build software<br/>for the web.</h1>
+        <p class="hero-bio">
+          Replace this with a one-to-two sentence summary of who you are and
+          what you do. Keep it direct — visitors decide in seconds.
+        </p>
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary">See my work</a>
+          <a href="#contact" class="btn btn-outline">Get in touch</a>
+          <a href="/resume.pdf" class="btn btn-outline" target="_blank">Résumé ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <p class="section-label reveal">About</p>
+      <h2 class="reveal">A little background.</h2>
+      <div class="about-body">
+        <div class="about-text reveal">
+          <p>
+            Hi — I'm <strong>Your Name</strong>, a software developer based in <strong>Your City</strong>.
+            Replace this paragraph with your story. How did you get into development?
+            What kind of problems do you love solving?
+          </p>
+          <p>
+            This second paragraph is a good place to mention your work style, values,
+            or the kinds of teams and projects that bring out your best work.
+          </p>
+          <p>
+            Outside of code I enjoy <strong>your hobbies here</strong> — and yes,
+            this site is self-hosted on a Raspberry Pi.
+          </p>
+        </div>
+        <div class="about-meta reveal">
+          <div class="meta-row">
+            <span class="meta-key">Role</span>
+            <span class="meta-val">Software Developer</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Location</span>
+            <span class="meta-val">Your City, Country</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Experience</span>
+            <span class="meta-val">X years</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Education</span>
+            <span class="meta-val">Your Degree / Self-taught</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-key">Status</span>
+            <span class="meta-val">Open to work ✦</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <p class="section-label reveal">Projects</p>
+      <h2 class="reveal">Things I've shipped.</h2>
+      <div class="project-list reveal">
+
+        <div class="project-item">
+          <div>
+            <div class="project-header">
+              <h3>Project Name</h3>
+              <span class="project-tag">Web App</span>
+            </div>
+            <p class="project-desc">One or two sentences describing what this project does, the problem it solves, and any notable results.</p>
+            <p class="project-stack">TypeScript · React · PostgreSQL</p>
+          </div>
+          <div class="project-links">
+            <a href="#">GitHub ↗</a>
+            <a href="#">Live ↗</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div>
+            <div class="project-header">
+              <h3>Another Project</h3>
+              <span class="project-tag">API</span>
+            </div>
+            <p class="project-desc">A backend service. Describe the architecture, scale, or any interesting technical decisions you made.</p>
+            <p class="project-stack">Python · FastAPI · Docker</p>
+          </div>
+          <div class="project-links">
+            <a href="#">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div>
+            <div class="project-header">
+              <h3>CLI Tool</h3>
+              <span class="project-tag">Open Source</span>
+            </div>
+            <p class="project-desc">A command-line tool you built and published. Mention downloads or GitHub stars if it has traction.</p>
+            <p class="project-stack">Go · Shell</p>
+          </div>
+          <div class="project-links">
+            <a href="#">GitHub ↗</a>
+          </div>
+        </div>
+
+        <div class="project-item">
+          <div>
+            <div class="project-header">
+              <h3>This Portfolio</h3>
+              <span class="project-tag">Self-Hosted</span>
+            </div>
+            <p class="project-desc">Minimal portfolio site self-hosted on a Raspberry Pi running Nginx. Vanilla HTML, CSS, and JS — no frameworks.</p>
+            <p class="project-stack">HTML · CSS · JS · Nginx · Raspberry Pi</p>
+          </div>
+          <div class="project-links">
+            <a href="#">GitHub ↗</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <p class="section-label reveal">Skills</p>
+      <h2 class="reveal">What I work with.</h2>
+      <div class="skills-grid reveal">
+        <div class="skill-group">
+          <h4>Languages</h4>
+          <ul>
+            <li>JavaScript</li>
+            <li>TypeScript</li>
+            <li>Python</li>
+            <li>Bash</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Frontend</h4>
+          <ul>
+            <li>React</li>
+            <li>HTML &amp; CSS</li>
+            <li>Tailwind</li>
+            <li>Figma</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Backend</h4>
+          <ul>
+            <li>Node.js</li>
+            <li>FastAPI</li>
+            <li>PostgreSQL</li>
+            <li>SQLite</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h4>Tooling</h4>
+          <ul>
+            <li>Git &amp; GitHub</li>
+            <li>Docker</li>
+            <li>Linux</li>
+            <li>Nginx</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <p class="section-label reveal">Contact</p>
+      <h2 class="reveal">Let's talk.</h2>
+      <div class="contact-layout">
+        <div class="contact-left reveal">
+          <p>
+            Whether you have a role to fill, a project to collaborate on,
+            or just want to connect — feel free to reach out. I try to
+            reply within a day or two.
+          </p>
+          <a href="mailto:you@example.com" class="btn btn-primary">Send an email</a>
+        </div>
+        <div class="contact-right reveal">
+          <a href="https://github.com/" target="_blank" class="contact-link-row">
+            <div>
+              <div class="link-name">GitHub</div>
+              <div class="link-handle">@yourusername</div>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+          <a href="https://linkedin.com/" target="_blank" class="contact-link-row">
+            <div>
+              <div class="link-name">LinkedIn</div>
+              <div class="link-handle">your-linkedin</div>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+          <a href="https://twitter.com/" target="_blank" class="contact-link-row">
+            <div>
+              <div class="link-name">Twitter / X</div>
+              <div class="link-handle">@yourhandle</div>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+          <a href="/resume.pdf" target="_blank" class="contact-link-row">
+            <div>
+              <div class="link-name">Résumé</div>
+              <div class="link-handle">PDF download</div>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <span>© 2025 Your Name</span>
+        <span>Self-hosted on a Raspberry Pi</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Scroll reveal
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          const siblings = [...e.target.parentElement.querySelectorAll('.reveal:not(.in)')];
+          const delay = siblings.indexOf(e.target) * 60;
+          setTimeout(() => e.target.classList.add('in'), delay);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Nav active state
+    const navIO = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          document.querySelectorAll('.nav-links a').forEach(a => a.style.color = '');
+          const a = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+          if (a) a.style.color = 'var(--ink)';
+        }
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+
+    document.querySelectorAll('section[id]').forEach(s => navIO.observe(s));
+  </script>
+</body>
+</html>
