@@ -225,6 +225,110 @@ h1 strong {
   animation: up 0.5s 0.44s ease forwards;
 }
 
+/* ─── Featured Project Banner ──────────────────────── */
+/* Add this block anywhere after the "Hero" section's    */
+/* CSS and before "About" — e.g. right after section 4.  */
+
+#featured {
+  border-bottom: 1px solid var(--border);
+  padding: 3rem 0;
+}
+
+.featured-card {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 2.5rem;
+  align-items: center;
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 2.25rem 2.5rem;
+}
+
+.featured-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.live-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: live-pulse 1.6s infinite;
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(0.8); }
+}
+
+.featured-title {
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  margin-bottom: 0.6rem;
+}
+
+.featured-desc {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--ink-2);
+  max-width: 520px;
+  line-height: 1.7;
+  margin-bottom: 1.1rem;
+}
+
+.featured-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.featured-tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--ink-2);
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+}
+
+.featured-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+.featured-actions .btn {
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .featured-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1.75rem;
+  }
+  .featured-actions {
+    flex-direction: row;
+  }
+  .featured-actions .btn {
+    flex: 1;
+  }
+}
+
 
 /* ─── 5. About ─────────────────────────────────────── */
 
