@@ -3,8 +3,7 @@
    Sections:
      1. Hero Terminal (typewriter, replayable)
      2. Scroll Reveal
-     3. Active Nav Highlight
-     4. Copy Email
+     3. Copy Email
 ───────────────────────────────────────────────────── */
 
 
@@ -137,31 +136,6 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-
-
-/* ─── 3. Active Nav Highlight ──────────────────────── *
- *
- * Watches each section. When a section is roughly
- * centred in the viewport, highlights its matching
- * nav link by setting its colour to --ink.
- * Resets all other links first so only one is active.
- *
- * ───────────────────────────────────────────────────── */
-
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (!entry.isIntersecting) return;
-
-    document.querySelectorAll('.nav-links a').forEach(a => a.style.color = '');
-
-    const activeLink = document.querySelector(
-      `.nav-links a[href="#${entry.target.id}"]`
-    );
-    if (activeLink) activeLink.style.color = 'var(--ink)';
-  });
-}, { rootMargin: '-30% 0px -60% 0px' });
-
-document.querySelectorAll('section[id]').forEach(s => navObserver.observe(s));
 
 
 /* ─── 4. Copy Email ────────────────────────────────── *
