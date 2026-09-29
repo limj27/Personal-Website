@@ -1,296 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dong Kyu Lim — Software Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Dong Kyu Lim — Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Nav -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo">dongkyu<span>.</span>lim</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
+<!-- Nav -->
+<nav>
+<div class="nav-inner">
+<a href="#hero" class="nav-logo">dongkyu<span>.</span>lim</a>
+<ul class="nav-links">
+<li><a href="#about">About</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="container">
-      <div class="hero-inner">
-        <p class="hero-eyebrow">Based in Washington State &nbsp;·&nbsp; Open to opportunities</p>
-        <h1>Hi, I'm <strong>Dong Kyu Lim</strong>.<br/>I solve problems<br/>you didn't know you had</h1>
-        <p class="hero-bio">
-          I build robust backend systems and APIs, with experience spanning microservices, frontend, and mobile development.
-        </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">See my work</a>
-          <a href="#contact" class="btn btn-outline">Get in touch</a>
-          <a href="/Resume-DongKyu.pdf" class="btn btn-outline" target="_blank">Résumé ↗</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Hero -->
+<section id="hero">
+<div class="container">
+<div class="hero-inner">
+<h1>Dong Kyu Lim</h1>
 
-  <section id="featured">
-    <div class="container">
-      <div class="featured-card reveal">
-        <div class="featured-left">
-          <div class="featured-eyebrow">
-            <span class="live-dot"></span>
-            Just shipped
-          </div>
-          <h3 class="featured-title">Elite Nine</h3>
-          <p class="featured-desc">
-            A real-time 1v1 baseball trivia game — fill a 3×3 grid with MLB players
-            matching row and column criteria. Built with Go, WebSockets, and live
-            MLB Stats API data. Difficulty modes, favorite teams, and turn timers.
-          </p>
-          <div class="featured-tags">
-            <span class="featured-tag">Real-time multiplayer</span>
-            <span class="featured-tag">MLB player data</span>
-            <span class="featured-tag">Difficulty modes</span>
-          </div>
-        </div>
-        <div class="featured-actions">
-          <a href="https://dklim.duckdns.org/game" class="btn btn-primary">Play now ↗</a>
-          <a href="https://github.com/limj27/EliteNine" class="btn btn-outline">View code</a>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="hero-terminal" id="heroTerminal" tabindex="0" role="button" aria-label="Replay terminal intro">
+<div class="terminal-bar"><span></span><span></span><span></span></div>
+<div class="terminal-body" id="terminalBody"></div>
+</div>
 
-  <!-- About -->
-  <section id="about">
-    <div class="container">
-      <p class="section-label reveal">About</p>
-      <h2 class="reveal">A little background.</h2>
-      <div class="about-body">
-        <div class="about-text reveal">
-        <p>
-          Hi — I'm <strong>Dong Kyu Lim</strong>, a software engineer based in <strong>Washington State</strong>.
-          I hold a Master's in Information Management from the University of Washington, where I also 
-          completed my Bachelor's in Informatics. My academic background gave me a strong foundation in both the technical and human-centered aspects of computing, which I apply to my work every day.
-        </p>
-        <p>
-          I specialise in building scalable backend systems and APIs, with hands-on experience in 
-          <strong>Go, Python, and cloud infrastructure</strong>. I've worked on everything from 
-          real-time multiplayer games to AI-powered apps to malware detection models.
-        </p>
-        <p>
-          Outside of code I enjoy <strong>baseball, golf, and cooking</strong> — and yes,
-          this site is self-hosted on a Raspberry Pi.
-        </p>
-        </div>
-        <div class="about-meta reveal">
-            <div class="meta-row">
-              <span class="meta-key">Role</span>
-              <span class="meta-val">Software Engineer</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-key">Location</span>
-              <span class="meta-val">Washington State</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-key">Graduate</span>
-              <span class="meta-val">M.S. Info Management, UW</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-key">Undergrad</span>
-              <span class="meta-val">B.S. Informatics, UW</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-key">Languages</span>
-              <span class="meta-val">Go, Python, Java, Kotlin, Swift</span>
-            </div>
-            <div class="meta-row">
-              <span class="meta-key">Status</span>
-              <span class="meta-val">Open to work ✦</span>
-            </div>
-          </div>
-      </div>
-    </div>
-  </section>
+<div class="hero-actions">
+<a href="#projects" class="btn btn-primary">See my work</a>
+<a href="#contact" class="btn btn-outline">Get in touch</a>
+<a href="Resume-DongKyu.pdf" class="btn btn-outline" target="_blank">Résumé ↗</a>
+</div>
+</div>
+</div>
+</section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <div class="container">
-      <p class="section-label reveal">Projects</p>
-      <h2 class="reveal">Things I've shipped.</h2>
-      <div class="project-list reveal">
+<section id="featured">
+<div class="container">
+<div class="featured-card reveal">
+<div class="featured-left">
+<div class="featured-eyebrow">
+<span class="live-dot"></span>
+Just shipped
+</div>
+<h3 class="featured-title">Elite Nine</h3>
+<p class="featured-desc">
+A real-time 1v1 baseball trivia game — fill a 3×3 grid with MLB players
+matching row and column criteria. Built with Go, WebSockets, and live
+MLB Stats API data. Difficulty modes, favorite teams, and turn timers.
+</p>
+<div class="featured-tags">
+<span class="featured-tag">Real-time multiplayer</span>
+<span class="featured-tag">MLB player data</span>
+<span class="featured-tag">Difficulty modes</span>
+</div>
+</div>
+<div class="featured-actions">
+<a href="https://dklim.duckdns.org/game" class="btn btn-primary">Play now ↗</a>
+<a href="https://github.com/limj27/EliteNine" class="btn btn-outline">View code</a>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="project-item">
-          <div>
-            <div class="project-header">
-              <h3>Elite Nine</h3>
-              <span class="project-tag">Web App</span>
-            </div>
-            <p class="project-desc">A real-time multiplayer game built with Go and React. Focus on a multiplayer experience testing baseball knowledge.</p>
-            <p class="project-stack">Golang · React · MySQL · Redis · WebSocket</p>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/limj27/EliteNine">GitHub ↗</a>
-            <a href="https://dklim.duckdns.org/game">Live ↗</a>
-          </div>
-        </div>
+<!-- About -->
+<section id="about">
+<div class="container">
+<p class="section-cmd reveal"><span class="prompt">$</span>about</p>
+<h2 class="reveal">A little background.</h2>
+<div class="about-body">
+<div class="about-text reveal">
+<p>
+Hi — I'm <strong>Dong Kyu Lim</strong>, a software engineer based in <strong>Washington State</strong>.
+I hold a Master's in Information Management from the University of Washington, where I also
+completed my Bachelor's in Informatics. My academic background gave me a strong foundation in both the technical and human-centered aspects of computing, which I apply to my work every day.
+</p>
+<p>
+I specialise in building scalable backend systems and APIs, with hands-on experience in
+<strong>Go, Python, and cloud infrastructure</strong>. I've worked on everything from
+real-time multiplayer games to AI-powered apps to malware detection models.
+</p>
+<p>
+Outside of code I enjoy <strong>baseball, golf, and cooking</strong> — and yes,
+this site is self-hosted on a Raspberry Pi.
+</p>
+</div>
+<div class="about-meta reveal">
+<div class="meta-row">
+<span class="meta-key">Role</span>
+<span class="meta-val">Software Engineer</span>
+</div>
+<div class="meta-row">
+<span class="meta-key">Location</span>
+<span class="meta-val">Washington State</span>
+</div>
+<div class="meta-row">
+<span class="meta-key">Graduate</span>
+<span class="meta-val">M.S. Info Management, UW</span>
+</div>
+<div class="meta-row">
+<span class="meta-key">Undergrad</span>
+<span class="meta-val">B.S. Informatics, UW</span>
+</div>
+<div class="meta-row">
+<span class="meta-key">Languages</span>
+<span class="meta-val">Go, Python, Java, Kotlin, Swift</span>
+</div>
+<div class="meta-row">
+<span class="meta-key">Status</span>
+<span class="meta-val">Open to work ✦</span>
+</div>
+</div>
+</div>
+</div>
+</section>
 
-        <div class="project-item">
-          <div>
-            <div class="project-header">
-              <h3>Champion IQ</h3>
-              <span class="project-tag">AI App</span>
-            </div>
-            <p class="project-desc">AI-Powered League of Legends companion app. Fetching live draft information and providing strategic insights.</p>
-            <p class="project-stack">Python · REST API · SQL · LLM</p>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/limj27/ChampionIQ">GitHub ↗</a>
-          </div>
-        </div>
+<!-- Projects -->
+<section id="projects">
+<div class="container">
+<p class="section-cmd reveal"><span class="prompt">$</span>ls projects/</p>
+<h2 class="reveal">Things I've shipped.</h2>
+<div class="project-list reveal">
 
-        <div class="project-item">
-          <div>
-            <div class="project-header">
-              <h3>KetChum</h3>
-              <span class="project-tag">iOS App</span>
-            </div>
-            <p class="project-desc">A mobile app displaying live TGC Pokemon cards and information. Ability to build decks and research card market value.</p>
-            <p class="project-stack">Swift · API</p>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/CocoaCommander/Ketchum">GitHub ↗</a>
-          </div>
-        </div>
+<div class="project-item">
+<div>
+<div class="project-header">
+<h3>Elite Nine</h3>
+<span class="project-tag">Web App</span>
+</div>
+<p class="project-desc">A real-time multiplayer game built with Go and React. Focus on a multiplayer experience testing baseball knowledge.</p>
+<div class="stack-tags">
+<span class="stack-tag">Golang</span>
+<span class="stack-tag">React</span>
+<span class="stack-tag">MySQL</span>
+<span class="stack-tag">Redis</span>
+<span class="stack-tag">WebSocket</span>
+</div>
+</div>
+<div class="project-links">
+<a href="https://github.com/limj27/EliteNine">GitHub ↗</a>
+<a href="https://dklim.duckdns.org/game">Live ↗</a>
+</div>
+</div>
 
-        <div class="project-item">
-          <div>
-            <div class="project-header">
-              <h3>This Portfolio</h3>
-              <span class="project-tag">Self-Hosted</span>
-            </div>
-            <p class="project-desc">Minimal portfolio site self-hosted on a Raspberry Pi running Nginx. Vanilla HTML, CSS, and JS — no frameworks.</p>
-            <p class="project-stack">HTML · CSS · JS · Nginx · Raspberry Pi</p>
-          </div>
-          <div class="project-links">
-            <a href="https://github.com/limj27/Personal-Website">GitHub ↗</a>
-          </div>
-        </div>
+<div class="project-item">
+<div>
+<div class="project-header">
+<h3>Champion IQ</h3>
+<span class="project-tag">AI App</span>
+</div>
+<p class="project-desc">AI-Powered League of Legends companion app. Fetching live draft information and providing strategic insights.</p>
+<div class="stack-tags">
+<span class="stack-tag">Python</span>
+<span class="stack-tag">REST API</span>
+<span class="stack-tag">SQL</span>
+<span class="stack-tag">LLM</span>
+</div>
+</div>
+<div class="project-links">
+<a href="https://github.com/limj27/ChampionIQ">GitHub ↗</a>
+</div>
+</div>
 
-      </div>
-    </div>
-  </section>
+<div class="project-item">
+<div>
+<div class="project-header">
+<h3>KetChum</h3>
+<span class="project-tag">iOS App</span>
+</div>
+<p class="project-desc">A mobile app displaying live TGC Pokemon cards and information. Ability to build decks and research card market value.</p>
+<div class="stack-tags">
+<span class="stack-tag">Swift</span>
+<span class="stack-tag">API</span>
+</div>
+</div>
+<div class="project-links">
+<a href="https://github.com/CocoaCommander/Ketchum">GitHub ↗</a>
+</div>
+</div>
 
-  <!-- Skills -->
-  <section id="skills">
-    <div class="container">
-      <p class="section-label reveal">Skills</p>
-      <h2 class="reveal">What I work with.</h2>
-      <div class="skills-grid reveal">
-        <div class="skill-group">
-          <h4>Languages</h4>
-          <ul>
-            <li>Golang</li>
-            <li>Python</li>
-            <li>Java</li>
-            <li>Kotlin</li>
-            <li>Swift</li>
-            <li>SQL</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h4>Frontend</h4>
-          <ul>
-            <li>ReactJS</li>
-            <li>NodeJS</li>
-            <li>HTML & CSS</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h4>Backend</h4>
-          <ul>
-            <li>REST APIs</li>
-            <li>WebSockets</li>
-            <li>Microservices</li>
-            <li>Redis</li>
-            <li>MySQL</li>
-          </ul>
-        </div>
-        <div class="skill-group">
-          <h4>Tooling</h4>
-          <ul>
-            <li>Docker</li>
-            <li>AWS</li>
-            <li>Git</li>
-            <li>Linux</li>
-            <li>Jira</li>
-            <li>Nginx</li>
-            <li>Networking</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
+<div class="project-item">
+<div>
+<div class="project-header">
+<h3>This Portfolio</h3>
+<span class="project-tag">Self-Hosted</span>
+</div>
+<p class="project-desc">Minimal portfolio site self-hosted on a Raspberry Pi running Nginx. Vanilla HTML, CSS, and JS — no frameworks.</p>
+<div class="stack-tags">
+<span class="stack-tag">HTML</span>
+<span class="stack-tag">CSS</span>
+<span class="stack-tag">JS</span>
+<span class="stack-tag">Nginx</span>
+<span class="stack-tag">Raspberry Pi</span>
+</div>
+</div>
+<div class="project-links">
+<a href="https://github.com/limj27/Personal-Website">GitHub ↗</a>
+</div>
+</div>
 
-  <!-- Contact -->
-  <section id="contact">
-    <div class="container">
-      <p class="section-label reveal">Contact</p>
-      <h2 class="reveal">Let's talk.</h2>
-      <div class="contact-layout">
-        <div class="contact-left reveal">
-          <p>
-            Whether you have a role to fill, a project to collaborate on,
-            or just want to connect — feel free to reach out. I try to
-            reply within a day or two.
-          </p>
-          <a href="mailto:limjustin2@gmail.com" class="btn btn-primary">Send an email</a>
-        </div>
-        <div class="contact-right reveal">
-          <a href="https://github.com/limj27" target="_blank" class="contact-link-row">
-            <div>
-              <div class="link-name">GitHub</div>
-              <div class="link-handle">@limj27</div>
-            </div>
-            <span class="link-arrow">→</span>
-          </a>
-          <a href="https://linkedin.com/in/dongkyujlim" target="_blank" class="contact-link-row">
-            <div>
-              <div class="link-name">LinkedIn</div>
-              <div class="link-handle">@dongkyujlim</div>
-            </div>
-            <span class="link-arrow">→</span>
-          </a>
-          <a href="/Resume-DongKyu.pdf" target="_blank" class="contact-link-row">
-            <div>
-              <div class="link-name">Résumé</div>
-              <div class="link-handle">PDF download</div>
-            </div>
-            <span class="link-arrow">→</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
+</div>
+</div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <div class="footer-inner">
-        <span>© 2026 Dong Kyu Lim</span>
-        <span>Self-hosted on a Raspberry Pi</span>
-      </div>
-    </div>
-  </footer>
+<!-- Skills -->
+<section id="skills">
+<div class="container">
+<p class="section-cmd reveal"><span class="prompt">$</span>skills --list</p>
+<h2 class="reveal">What I work with.</h2>
+<div class="skills-grid reveal">
+<div class="skill-group">
+<h4>Languages</h4>
+<ul>
+<li>Golang</li>
+<li>Python</li>
+<li>Java</li>
+<li>Kotlin</li>
+<li>Swift</li>
+<li>SQL</li>
+</ul>
+</div>
+<div class="skill-group">
+<h4>Frontend</h4>
+<ul>
+<li>ReactJS</li>
+<li>NodeJS</li>
+<li>HTML & CSS</li>
+</ul>
+</div>
+<div class="skill-group">
+<h4>Backend</h4>
+<ul>
+<li>REST APIs</li>
+<li>WebSockets</li>
+<li>Microservices</li>
+<li>Redis</li>
+<li>MySQL</li>
+</ul>
+</div>
+<div class="skill-group">
+<h4>Tooling</h4>
+<ul>
+<li>Docker</li>
+<li>AWS</li>
+<li>Git</li>
+<li>Linux</li>
+<li>Jira</li>
+<li>Nginx</li>
+<li>Networking</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
 
-  <script src="script.js"></script>
+<!-- Contact -->
+<section id="contact">
+<div class="container">
+<p class="section-cmd reveal"><span class="prompt">$</span>contact --info</p>
+<h2 class="reveal">Let's talk.</h2>
+<div class="contact-layout">
+<div class="contact-left reveal">
+<p>
+Whether you have a role to fill, a project to collaborate on,
+or just want to connect — feel free to reach out. I try to
+reply within a day or two.
+</p>
+<div class="contact-actions">
+<a href="mailto:limjustin2@gmail.com" class="btn btn-primary">Send an email</a>
+<button type="button" class="btn btn-outline" id="copyEmailBtn">Copy email</button>
+<span class="copy-msg" id="copyMsg">Copied!</span>
+</div>
+</div>
+<div class="contact-right reveal">
+<a href="https://github.com/limj27" target="_blank" class="contact-link-row">
+<div>
+<div class="link-name">GitHub</div>
+<div class="link-handle">@limj27</div>
+</div>
+<span class="link-arrow">→</span>
+</a>
+<a href="https://linkedin.com/in/dongkyujlim" target="_blank" class="contact-link-row">
+<div>
+<div class="link-name">LinkedIn</div>
+<div class="link-handle">@dongkyujlim</div>
+</div>
+<span class="link-arrow">→</span>
+</a>
+<a href="Resume-DongKyu.pdf" target="_blank" class="contact-link-row">
+<div>
+<div class="link-name">Résumé</div>
+<div class="link-handle">PDF download</div>
+</div>
+<span class="link-arrow">→</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer>
+<div class="container">
+<div class="footer-inner">
+<span>© 2026 Dong Kyu Lim</span>
+<span>Self-hosted on a Raspberry Pi</span>
+</div>
+</div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
