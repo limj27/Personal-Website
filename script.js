@@ -18,9 +18,9 @@
 
 const TERMINAL_LINES = [
   { prompt: true,  text: 'whoami' },
-  { prompt: false, text: 'Dong Kyu Lim — backend engineer, Seattle' },
+  { prompt: false, text: 'Dong Kyu Lim — software engineer, Seattle' },
   { prompt: true,  text: 'status --check' },
-  { prompt: false, text: 'open to work · self-hosted on a Raspberry Pi', cursor: true },
+  { prompt: false, text: 'open to work', cursor: true },
 ];
 
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
